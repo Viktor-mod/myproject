@@ -1,13 +1,500 @@
-body {
+* {
+  box-sizing: border-box;
+  /*background-color: #ffffff;*/
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #EFF1F3;
 }
+
+.wrapper {
+  position: relative;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 80px;
+}
+
+.icon  {
+  display: flex;
+}
+
+.icon > li {
+  cursor: pointer;
+}
+
+.iconUser {
+  margin-right: 10px;
+}
+
+
+.slider {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.sliderItem {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 37px 0 0 75px;
+
+}
+
+.sliderTitle {
+  /*position: absolute;*/
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+
+b {
+  color: #FFA404;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.sliderButton {
+  width: 170px;
+  height: 45px;
+  margin-top: 15px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #A00D2D;
+  cursor: pointer;
+  transition: .3s ease-in;
+  letter-spacing: 1.3px;
+}
+
+.sliderButton:hover {
+  background: rgba(0,0,0,0);
+  color: #ffa404;
+  box-shadow: inset 0 0 0 3px #ffa404;
+}
+
+.sliderItemImg {
+  width: 50%;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+  background-color: #ffffff;
+  background-image: url("/public/img/backgrImg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: -10px 0px 10px 3px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.content {
+  padding: 48px 75px;
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.searchBlock {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #b9b8b8;
+  border-radius: 10px;
+  padding: 0 15px;
+}
+
+.searchBlock > input {
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+  width: 200px;
+  background-color: #F2F2F2;
+  outline: none;
+}
+
+.deleteSearch {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+/*****************************CARD PRODUCT*****************************/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  width: 322px;
+  height: 380px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: none;
+  font-size: 14px;
+  transition: box-shadow .3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(2px);
+}
+
+.cardTitle {
+  margin: 18px 0;
+}
+
+
+.cardButton {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 17px;
+  cursor: pointer;
+  transition: .3s ease-in;
+}
+
+.cardButton:hover {
+  opacity: 0.7;
+}
+
+
+.contentCard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 50%);
+}
+
+
+/****************************AUTHORIZATION*****************************/
+
+.overlayForm {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 50%);
+}
+
+.form {
+  margin-top: 50px;
+  display: block;
+  position: absolute;
+  width: 563px;
+  height: 506px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 27px 68px 0;
+  text-align: center;
+}
+
+.form > img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 15px 15px 0 0;
+  cursor: pointer;
+}
+
+.formTitle {
+  font-size: 64px;
+  color: #FFA404;
+}
+
+.formWrapper {
+  margin: 47px 0 0;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.formItem > input::placeholder {
+  color: #787878;
+}
+
+.formItemInput {
+  width: 100%;
+  height: 46px;
+  padding: 16px 0 16px 24px;
+  border: 1px solid #DDDDDD;
+  border-radius: 10px;
+  background-color: #F2F2F2;
+}
+
+.formPolicy {
+  margin: 22px 0;
+  font-size: 12px;
+}
+
+.formLink {
+  font-size: 12px;
+  margin-top: 22px;
+}
+
+
+/*****CHECKBOX*****/
+
+.wrapperCheckbox {
+  display: flex;
+  position: relative;
+}
+
+.customCheckbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.customCheckbox + label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.customCheckbox + label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  margin-right: 8px;
+  background-color: #F2F2F2;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  transition: .3s ease-in-out;
+}
+
+.customCheckbox:checked + label::before {
+  border-color: #A00D2D;
+  background-color: #A00D2D;
+  background-image: url(/public/img/check.svg);
+}
+
+.customCheckbox + label:hover::before {
+  border-color: #A00D2D;
+}
+
+/*****BUTTON*****/
+.formButton {
+  width: 170px;
+  height: 45px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #A00D2D;
+  cursor: pointer;
+  transition: .3s ease-in;
+  letter-spacing: 1.3px;
+}
+
+.formButton:hover {
+  background: rgba(0,0,0,0);
+  color: #ffa404;
+  box-shadow: inset 0 0 0 3px #ffa404;
+}
+
+
+/****************************CART*****************************/
+.products {
+  flex: 1;
+  overflow: auto;
+  margin: 40px 0;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 380px;
+  /*height: 30%;*/
+  background: #FFFFFF;
+  right: 0;
+  border-radius: 0 0 0 10px;
+  padding: 30px;
+}
+
+.cartTitle {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartTitle > img {
+  cursor: pointer;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  margin-top: 30px;
+  transition: box-shadow .3s ease-in-out, transform 0.2s ease-in-out;
+
+}
+
+.cartItem:hover {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.cartItemInfo {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.cartItemProperties {
+  margin: 0 10px;
+  width: 184px;
+}
+
+.cartItemButton {
+  fill: #787878;
+  opacity: 0.2;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.cartItemButton:hover {
+  opacity: 1;
+  fill: #A00D2D;
+}
+
+.cartTotalBlock {
+  margin-bottom: 10px;
+}
+
+.itemTotalBlock > div {
+  flex: 1;
+  height: 1px;
+  border-bottom: 1px dashed #dcdcdc;
+  position: relative;
+  top: -4px;
+  margin: 0 7px;
+}
+
+.itemTotalBlock {
+  display: flex;
+  align-items: flex-end;
+}
+
+.cartBtn {
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  height: 55px;
+  background: #A00D2D;
+  border-radius: 10px;
+  transition: .3s ease-in;
+  text-transform: uppercase;
+}
+
+.cartBtn:hover {
+  background: rgba(0,0,0,0);
+  color: #ffa404;
+  box-shadow: inset 0 0 0 3px #ffa404;
+
+}
+
+.cartBtn:active {
+  background: #dcdcdc;
+}
+
+/*************CARTEMPTY************/
+
+.cartEmpty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: inherit;
+  font-size: 14px;
+  margin: 20px;
+  color: #A00D2D;
+  text-transform: uppercase;
+}
+
+
+/********************BANNER*******************/
+
+.banner {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerTitle {
+  font-family: 'Montserrat Alternates', sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  color: #ffffff;
+  font-size: 64px;
+}
+
+
+/********************FOOTER********************/
+
+.footer {
+  position: relative;
+  height: 334px;
+  padding: 40px 80px 0;
+}
+
+.footerContainer {
+  display: flex;
+}
+
+.footerItem {
+  margin-right: 142px;
+  font-size: 16px;
+}
+
+.footerItem > li {
+  margin-top: 15px;
+}
+
+
+
+
